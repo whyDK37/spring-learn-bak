@@ -4,12 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="testBean" name="abcbean,abean" class="me.spring.chapt2.TestBean" >
-        <property name="testBean" ref="testBean2" />
-    </bean>
-
-    <bean id="testBean2"  class="me.spring.chapt2.TestBean" depends-on="testBean" >
-        <property name="testBean" ref="testBean" />
+    <bean id="testBean2"  class="me.spring.chapt2.TestBean"  >
+        <!--<property name="testBean" ref="testBean" />-->
+        <property name="hello" value="hello from xml"/>
     </bean>
 
 </beans>

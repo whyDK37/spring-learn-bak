@@ -4,14 +4,14 @@ package me.spring.chapt2;
  * Hello world!
  *
  */
-public class TestBean
-{
+public class TestBean  extends Abc{
 
 
     private TestBean testBean;
+    private String hello ="Hello World!";
     public void hello()
     {
-        System.out.println( "Hello World!" );
+        System.out.println( hello );
     }
 
     public void setTestBean(TestBean testBean) {
@@ -20,5 +20,13 @@ public class TestBean
 
     public TestBean getTestBean() {
         return testBean;
+    }
+
+    public void setHello(String hello) {
+        this.hello = hello;
+    }
+
+    public void test(){
+        System.out.println(this.hello+"...");
     }
 }

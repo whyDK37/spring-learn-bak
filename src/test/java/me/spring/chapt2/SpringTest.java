@@ -1,6 +1,8 @@
 package me.spring.chapt2;
 
 import org.junit.Test;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -13,15 +15,32 @@ public class SpringTest {
 
     @Test
     public void testXmlBeanFactory(){
-        XmlBeanFactory beanFactory= new XmlBeanFactory(new ClassPathResource("spring-chapt2.xml"));
+        XmlBeanFactory beanFactory= new XmlBeanFactory(new ClassPathResource("src/main/resources/spring-chapt2.xml"));
+
         TestBean testBean = beanFactory.getBean("testBean",TestBean.class);
         testBean.hello();
         testBean = beanFactory.getBean("abcbean",TestBean.class);
         testBean.hello();
         testBean = beanFactory.getBean("abean",TestBean.class);
         testBean.hello();
-        testBean.getTestBean().hello();
-        testBean.getTestBean().getTestBean().hello();
+    }
+
+    @Test
+    public void testDefaultListableBeanFactory(){
+        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+        XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(beanFactory);
+        xmlBeanDefinitionReader.loadBeanDefinitions("spring-chapt2.xml");
+        xmlBeanDefinitionReader.loadBeanDefinitions("spring-chapt3.xml");
+
+        TestBean testBean = beanFactory.getBean("testBean2",TestBean.class);
+        testBean.hello();
+        testBean = (TestBean) beanFactory.getBean("testBean2");
+//        testBean = beanFactory.getBean("abcbean",TestBean.class);
+//        testBean.hello();
+//        testBean = beanFactory.getBean("abean",TestBean.class);
+//        testBean.hello();
+//        testBean.getTestBean().hello();
+//        testBean.getTestBean().getTestBean().hello();
     }
 
     @Test
