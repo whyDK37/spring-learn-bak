@@ -1,6 +1,7 @@
 /spring-learn.ipr
 /spring-learn.iml
 /spring-learn.iws
+/.gradle
 *.class
 
 # Mobile Tools for Java (J2ME)
