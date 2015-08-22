@@ -1,0 +1,30 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'maven'
+
+group = 'me.spring'
+version = '1.0-SNAPSHOT'
+
+description = """spring-learn"""
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+
+repositories {
+     mavenLocal()
+     jcenter()
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile group: 'org.springframework', name: 'spring-context', version:'4.1.6.RELEASE'
+    compile group: 'org.springframework', name: 'spring-aop', version:'4.1.6.RELEASE'
+    compile group: 'org.springframework', name: 'spring-aspects', version:'4.1.6.RELEASE'
+    
+    compile group: 'cglib', name: 'cglib', version:'3.1'
+    compile group: 'aopalliance', name: 'aopalliance', version:'1.0'
+    compile group: 'org.javassist', name: 'javassist', version:'3.20.0-GA'
+    compile group: 'commons-collections', name: 'commons-collections', version:'3.2.1'
+    compile group: 'junit', name: 'junit', version:'4.11'
+}
