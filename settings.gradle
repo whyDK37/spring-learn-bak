@@ -1,5 +1,6 @@
 rootProject.name = 'spring-learn'
 
+include 'batch'
 include 'bean'
 include 'boot'
 include 'web'
