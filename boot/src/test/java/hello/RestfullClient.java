@@ -10,7 +10,7 @@ import web.pojo.Greeting;
 public class RestfullClient {
     @Test
     public void test() {
-        final String uri = "http://localhost:8080/greeting?id=12&content=我是内容";
+        final String uri = "http://localhost:8080/seq/seq/topic?fc=20";
 
         RestTemplate restTemplate = new RestTemplate();
 //        Greeting result = restTemplate.getForObject(uri, Greeting.class);
