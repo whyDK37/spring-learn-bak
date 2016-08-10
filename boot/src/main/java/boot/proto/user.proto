@@ -1,0 +1,12 @@
+package proto;
+
+option java_package = "proto";
+option java_outer_classname = "UserProtos";
+
+/**
+protoc  --java_out=./src   ./proto/msg.proto
+*/
+message User {
+    optional int64 id = 1;
+    optional string name = 2;
+}

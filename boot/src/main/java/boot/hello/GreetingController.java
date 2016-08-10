@@ -1,8 +1,8 @@
-package web.hello;
+package boot.hello;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import web.pojo.Greeting;
+import boot.pojo.Greeting;
 
 /**
  * curl -X POST http://localhost:8080/greeting

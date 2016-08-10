@@ -1,4 +1,4 @@
-package web.interceptor;
+package boot.interceptor;
 
 import org.springframework.ui.ModelMap;
 import org.springframework.web.context.request.WebRequest;

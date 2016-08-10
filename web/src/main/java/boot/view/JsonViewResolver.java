@@ -1,4 +1,4 @@
-package web.view;
+package boot.view;
 
 import java.util.Locale;
 

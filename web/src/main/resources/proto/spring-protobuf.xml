@@ -19,7 +19,7 @@
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.protobuf.ProtobufHttpMessageConverter">
                 <!--<constructor-arg>-->
-                <!--<bean class="com.github.zhangkaitao.web.controller.MyExtensionRegistryInitializer"/>-->
+                    <!--<bean class="com.github.zhangkaitao.web.controller.MyExtensionRegistryInitializer"/>-->
                 <!--</constructor-arg>-->
             </bean>
         </mvc:message-converters>
@@ -35,9 +35,8 @@
         </mvc:interceptor>
     </mvc:interceptors>
 
-    <context:component-scan base-package="boot" use-default-filters="false">
+    <context:component-scan base-package="boot.*" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
-        <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.RestController"/>
     </context:component-scan>
 
     <!-- REST中根据URL后缀自动判定Content-Type及相应的View -->

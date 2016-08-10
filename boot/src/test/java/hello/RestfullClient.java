@@ -2,7 +2,6 @@ package hello;
 
 import org.junit.Test;
 import org.springframework.web.client.RestTemplate;
-import web.pojo.Greeting;
 
 /**
  * Created by whydk on 2016/7/19.

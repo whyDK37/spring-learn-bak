@@ -1,4 +1,4 @@
-package web.pojo;
+package boot.pojo;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;

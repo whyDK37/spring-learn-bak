@@ -13,7 +13,7 @@ import org.springframework.core.io.ClassPathResource;
  */
 public class SpringTest {
 
-    //@Test
+    //@UserProtoTest
     public void testXmlBeanFactory(){
         XmlBeanFactory beanFactory= new XmlBeanFactory(new ClassPathResource("src/main/resources/spring-chapt2.xml"));
 
@@ -25,7 +25,7 @@ public class SpringTest {
         testBean.hello();
     }
 
-    //@Test
+    //@UserProtoTest
     public void testDefaultListableBeanFactory(){
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
         XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(beanFactory);
@@ -43,7 +43,7 @@ public class SpringTest {
 //        testBean.getTestBean().getTestBean().hello();
     }
 
-    //@Test
+    //@UserProtoTest
     public void testApplicationContext(){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-chapt2.xml");
         applicationContext.getBean("abcbean",TestBean.class);

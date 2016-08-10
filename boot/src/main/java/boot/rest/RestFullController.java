@@ -1,6 +1,6 @@
-package web.rest;
+package boot.rest;
 
-import web.pojo.User;
+import boot.pojo.User;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

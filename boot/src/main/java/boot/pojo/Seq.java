@@ -1,4 +1,4 @@
-package web.pojo;
+package boot.pojo;
 
 public class Seq {
 
