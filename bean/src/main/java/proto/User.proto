@@ -1,7 +1,9 @@
-package netty;
-option java_package="protobuf";
+package proto;
+option java_package="proto";
 option java_outer_classname="UserProto";
-
+//protoc  --java_out=. User.proto
+//protoc -I=$SRC_DIR --cpp_out=$DST_DIR $SRC_DIR/addressbook.proto
+//protoc  --python_out=. User.proto
 message User{
     required int32 ID=1;
     required string userName=2;
