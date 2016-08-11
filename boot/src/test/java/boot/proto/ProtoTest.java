@@ -6,6 +6,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+import proto.UserProto;
 
 import java.net.URI;
 
@@ -13,32 +14,32 @@ import java.net.URI;
  * Created by whydk on 2016/8/2.
  */
 public class ProtoTest {
-    private String baseUri = "http://localhost:8080/w";
+    private String baseUri = "http://localhost:8080";
 
     @Test
     public void testRead() {
 
         HttpHeaders headers = new HttpHeaders();
-        RequestEntity<UserProtos.User> requestEntity =
-                new RequestEntity<UserProtos.User>(headers, HttpMethod.POST, URI.create(baseUri + "/proto/read"));
+        RequestEntity<UserProto.User> requestEntity =
+                new RequestEntity<UserProto.User>(headers, HttpMethod.POST, URI.create(baseUri + "/proto/read"));
 
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<UserProtos.User> responseEntity =
-                restTemplate.exchange(requestEntity, UserProtos.User.class);
+        ResponseEntity<UserProto.User> responseEntity =
+                restTemplate.exchange(requestEntity, UserProto.User.class);
 
         System.out.println(responseEntity.getBody());
     }
 
     @Test
     public void testWrite() {
-        UserProtos.User user = UserProtos.User.newBuilder().setId(1).setName("zhangsan").build();
+        UserProto.User user = UserProto.User.newBuilder().setID(1).setUserName("zhangsan").build();
         HttpHeaders headers = new HttpHeaders();
-        RequestEntity<UserProtos.User> requestEntity =
-                new RequestEntity<UserProtos.User>(user, headers, HttpMethod.POST, URI.create(baseUri + "/proto/write"));
+        RequestEntity<UserProto.User> requestEntity =
+                new RequestEntity<UserProto.User>(user, headers, HttpMethod.POST, URI.create(baseUri + "/proto/write"));
 
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<UserProtos.User> responseEntity =
-                restTemplate.exchange(requestEntity, UserProtos.User.class);
+        ResponseEntity<UserProto.User> responseEntity =
+                restTemplate.exchange(requestEntity, UserProto.User.class);
         System.out.println(responseEntity.getBody());
     }
 }
