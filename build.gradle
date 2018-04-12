@@ -90,7 +90,7 @@ project(':bean') {
 
 
 project(':web') {
-    description = 'spring3 源码学习'
+    description = 'spring web'
     apply plugin: "war"
     dependencies {
         compile project(":bean")
@@ -124,7 +124,7 @@ project(':web') {
 
 
 project(':boot') {
-    description = 'spring3 源码学习'
+    description = 'spring boot'
 
     dependencies {
         compile project(":bean")
@@ -146,6 +146,41 @@ project(':boot') {
 
         compile "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.5.3"
         compile "org.codehaus.jackson:jackson-mapper-asl:1.9.13"
+
+        testCompile("org.springframework.boot:spring-boot-starter-test:1.3.6.RELEASE")
+
+    }
+}
+
+
+
+project(':boot') {
+    description = 'spring3 源码学习'
+
+    dependencies {
+        compile project(":bean")
+//        compile "org.springframework:spring-core:${springVersion}"
+//        compile "org.springframework:spring-context:${springVersion}"
+//        compile "org.springframework:spring-context-support:${springVersion}"
+//        compile "org.springframework:spring-jdbc:${springVersion}"
+//        compile "org.springframework:spring-orm:${springVersion}"
+//        compile "org.springframework:spring-tx:${springVersion}"
+
+//        compile "org.springframework:spring-web:${springVersion}"
+        // spring boot
+        compile("org.springframework.boot:spring-boot-starter-web:1.2.7.RELEASE")
+
+        // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+        compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.1'
+        // https://mvnrepository.com/artifact/commons-collections/commons-collections
+        compile group: 'commons-collections', name: 'commons-collections', version: '3.2.1'
+
+        compile "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.5.3"
+        compile "org.codehaus.jackson:jackson-mapper-asl:1.9.13"
+
+        // cloud
+        // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-hystrix
+        compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-hystrix', version: '1.3.6.RELEASE'
 
         testCompile("org.springframework.boot:spring-boot-starter-test:1.3.6.RELEASE")
 
